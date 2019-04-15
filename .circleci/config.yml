@@ -9,7 +9,7 @@ jobs:
           command: |
             poetry install
             cp stadfangaskra.csv stadfangaskra-old.csv
-            addresses > stadfangaskra.csv
+            poetry run addresses > stadfangaskra.csv
             git add stadfangaskra.csv
             git config --global user.email "stadfangaskrarbot@example.com"
             git config --global user.name "Staðfangaskrárbot"
