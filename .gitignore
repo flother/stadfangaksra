@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+pip-wheel-metadata/
+poetry.lock
+*.egg-info/
+.cache
+build/
+dist/
+.tox
+.coverage
+htmlcov
+docs/_build
+.venv

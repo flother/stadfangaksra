@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "stadfangaskra"
+version = "0.1.0"
+description = "A more useable copy of the official Icelandic street address registry"
+authors = ["Matt Riggott <matt.riggott@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.4"
+csv-diff = "^0.4.0"
+
+[tool.poetry.scripts]
+addresses = "stadfangaskra:output_addresses_csv"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
