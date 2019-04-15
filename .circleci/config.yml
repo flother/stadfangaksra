@@ -13,7 +13,7 @@ jobs:
             git add stadfangaskra.csv
             git config --global user.email "stadfangaskrarbot@example.com"
             git config --global user.name "Staðfangaskrárbot"
-            csv-diff stadfangaskra-old.csv stadfangaskra.csv --key=HNITNUM --singular=address --plural=addresses > message.txt
+            poetry run csv-diff stadfangaskra-old.csv stadfangaskra.csv --key=HNITNUM --singular=address --plural=addresses > message.txt
             echo $'\n[skip ci]' >> message.txt
             git commit -F message.txt && \
               git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/flother/stadfangaskra.git master \
