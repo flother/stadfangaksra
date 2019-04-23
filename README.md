@@ -9,7 +9,7 @@ This is a copy of the official database of Icelandic street addresses, [Staðfan
 - The fields in the CSV file are comma-separated, not pipe-separated
 - The numeric coordinates are stored using "." for decimal points, not ","
 
-The data is otherwise left untouched.
+On top of these improvements, the `DAGS_UTGAFA` (date published) column is removed; its value — the current date — is identical for each row and can of course be recovered using the commit date. The data is otherwise left untouched.
 
 Each day, at [01:00 UTC](https://time.is/0100_UTC), the [source file](ftp://ftp.skra.is/skra/STADFANG.dsv.zip) is checked for updates. If it's been updated, the new data is saved to this repository. You can then see the [changes to the database over time](https://github.com/flother/stadfangaskra/commits/master/stadfangaskra.csv) by using this repo's Git commit history.
 
