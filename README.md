@@ -13,6 +13,18 @@ On top of these improvements, the `DAGS_UTGAFA` (date published) column is remov
 
 Each day, at [23:00 UTC](https://time.is/2300_UTC), the [source file](ftp://ftp.skra.is/skra/STADFANG.dsv.zip) is checked for updates. If it's been updated, the new data is saved to this repository. You can then see the [changes to the database over time](https://github.com/flother/stadfangaskra/commits/master/stadfangaskra.csv) by using this repo's Git commit history.
 
-You can [download the latest CSV file](https://raw.githubusercontent.com/flother/stadfangaskra/master/stadfangaskra.csv) directly from GitHub.
+You can [download the latest CSV file](https://raw.githubusercontent.com/flother/stadfangaskra/master/stadfangaskra.csv) directly from GitHub. You can convert the data from CSV to GeoJSON using [GDAL/OGR](https://www.gdal.org/):
+
+```sh
+$ ogr2ogr \
+   -f GeoJSON \
+   -oo X_POSSIBLE_NAMES=LONG_WGS84 \
+   -oo Y_POSSIBLE_NAMES=LAT_WGS84 \
+   -oo KEEP_GEOM_COLUMNS=NO \
+   -lco RFC7946=YES \
+   -lco WRITE_NAME=NO \
+   stadfangaskra.geojson \
+   /vsicurl_streaming/https://raw.githubusercontent.com/flother/stadfangaskra/master/stadfangaskra.csv
+```
 
 The source data is provided by [Þjóðskrá Íslands](https://www.skra.is/), the national agency resposible for Iceland's property register. It's licensed under the [Creative Commons Attribution 4.0 International licence](https://creativecommons.org/licenses/by/4.0/).
