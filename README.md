@@ -11,7 +11,7 @@ This is a copy of the official database of Icelandic street addresses, [Staðfan
 
 On top of these improvements, the `DAGS_UTGAFA` (date published) column is removed; its value — the current date — is identical for each row and can of course be recovered using the commit date. The data is otherwise left untouched.
 
-Each day, at [23:00 UTC](https://time.is/2300_UTC), the [source file](ftp://ftp.skra.is/skra/STADFANG.dsv.zip) is checked for updates. If it's been updated, the new data is saved to this repository. You can then see the [changes to the database over time](https://github.com/flother/stadfangaskra/commits/master/stadfangaskra.csv) by using this repo's Git commit history.
+The source data is updated once a week, on Sundays at 21:00, and so at [22:00 UTC](https://time.is/2200_UTC) every Sunday the [source file](ftp://ftp.skra.is/skra/STADFANG.dsv.zip) is checked for updates. The new data is then saved to this repository. You can then see the [changes to the database over time](https://github.com/flother/stadfangaskra/commits/master/stadfangaskra.csv) by using this repo's Git commit history.
 
 You can [download the latest CSV file](https://raw.githubusercontent.com/flother/stadfangaskra/master/stadfangaskra.csv) directly from GitHub. You can convert the data from CSV to GeoJSON using [GDAL/OGR](https://www.gdal.org/):
 
