@@ -27,4 +27,4 @@ $ ogr2ogr \
    /vsicurl_streaming/https://raw.githubusercontent.com/flother/stadfangaskra/master/stadfangaskra.csv
 ```
 
-The source data is provided by [Þjóðskrá Íslands](https://www.skra.is/), the national agency resposible for Iceland's property register. It's licensed under the [Creative Commons Attribution 4.0 International licence](https://creativecommons.org/licenses/by/4.0/).
+The source data is provided by [Þjóðskrá Íslands](https://www.skra.is/), the national agency responsible for Iceland's property register. It's licensed under the [Creative Commons Attribution 4.0 International licence](https://creativecommons.org/licenses/by/4.0/).
