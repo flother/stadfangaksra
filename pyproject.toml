@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stadfangaskra"
-version = "0.1.0"
+version = "0.2.0"
 description = "A more useable copy of the official Icelandic street address registry"
 authors = ["Matt Riggott <matt.riggott@gmail.com>"]
 

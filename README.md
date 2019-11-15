@@ -7,6 +7,7 @@ This is a copy of the official database of Icelandic street addresses, [Staðfan
 - The data's available over HTTP, not FTP
 - The data's available to download as a CSV file, not a CSV file within a ZIP file
 - The fields in the CSV file are comma-separated, not pipe-separated
+- The date fields are stored in `YYYY-MM-DD` format, not `DD.MM.YYYY`
 - The numeric coordinates are stored using "." for decimal points, not ","
 
 On top of these improvements, the `DAGS_UTGAFA` (date published) column is removed; its value — the current date — is identical for each row and can of course be recovered using the commit date. The data is otherwise left untouched.
