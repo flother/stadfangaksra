@@ -18,6 +18,9 @@ jobs:
             git commit -F message.txt && \
               git push -q https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/flother/stadfangaskra.git master \
               || true
+            poetry run csv-diff stadfangaskra-old.csv stadfangaskra.csv --key=HNITNUM --singular=address --plural=addresses --json > /tmp/stadfangaskra-diff.json
+      - store_artifacts:
+          path: /tmp/stadfangaskra-diff.json
 workflows:
   version: 2
   build:
