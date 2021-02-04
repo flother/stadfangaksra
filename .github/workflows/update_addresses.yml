@@ -1,0 +1,35 @@
+name: Update addresses
+on:
+  schedule:
+    - cron: "0 22 * * 0"
+jobs:
+  update-addresses:
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Set up Python 3.7"
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.0
+      - name: Install dependencies
+        run: poetry install
+      - name: Download new addresses
+        run: |
+          cp stadfangaskra.csv stadfangaskra-old.csv
+          poetry run addresses > stadfangaskra.csv
+      - name: Commit changes
+        run: |
+          git add stadfangaskra.csv
+          git config --global user.email "stadfangaskrarbot@example.com"
+          git config --global user.name "Staðfangaskrárbot"
+          poetry run csv-diff stadfangaskra-old.csv stadfangaskra.csv --key=HNITNUM --singular=address --plural=addresses > message.txt
+          git commit -F message.txt
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
