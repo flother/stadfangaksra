@@ -15,7 +15,7 @@ jobs:
           poetry-version: 1.0
       - name: Install dependencies
         run: poetry install
-      - name: Add new addresses
+      - name: Download new addresses
         run: |
           cp stadfangaskra.csv stadfangaskra-old.csv
           poetry run addresses > stadfangaskra.csv
