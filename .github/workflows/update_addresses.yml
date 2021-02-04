@@ -1,5 +1,7 @@
 name: Update addresses
-on: [push]
+on:
+  schedule:
+    - cron: "0 22 * * 0"
 jobs:
   update-addresses:
     runs-on: "ubuntu-20.04"
