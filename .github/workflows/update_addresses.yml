@@ -1,0 +1,19 @@
+name: Update addresses
+on:
+  schedule:
+    - cron: "0 22 * * 0"
+jobs:
+  update-addresses:
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Set up Python 3.7"
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.0
+      - name: Install dependencies
+        run: poetry install
