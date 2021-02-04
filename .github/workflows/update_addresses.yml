@@ -19,6 +19,8 @@ jobs:
         run: |
           cp stadfangaskra.csv stadfangaskra-old.csv
           poetry run addresses > stadfangaskra.csv
+      - name: Commit changes
+        run: |
           git add stadfangaskra.csv
           git config --global user.email "stadfangaskrarbot@example.com"
           git config --global user.name "Staðfangaskrárbot"
