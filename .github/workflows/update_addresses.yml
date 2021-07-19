@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "stadfangaskrarbot@example.com"
           git config --global user.name "Staðfangaskrárbot"
           poetry run csv-diff stadfangaskra-old.csv stadfangaskra.csv --key=HNITNUM --singular=address --plural=addresses > message.txt
-          git diff-index --quiet HEAD || git commit -F message.txt
+          git diff-index --quiet HEAD -- stadfangaskra.csv || git commit -F message.txt
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
