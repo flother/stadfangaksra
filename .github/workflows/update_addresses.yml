@@ -2,6 +2,7 @@ name: Update addresses
 on:
   schedule:
     - cron: "0 22 * * 0"
+  workflow_dispatch:
 jobs:
   update-addresses:
     runs-on: "ubuntu-20.04"
